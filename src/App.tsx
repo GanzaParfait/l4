@@ -1,14 +1,18 @@
-import Library from "./components/Library"
-import "./style.css"
-import City from './components/City'
-import Table from './components/Table'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Form } from './components/Form'
+import HomePage from './components/HomePage'
+import Counter from './components/Counter'
 
 function App () {
   return (
     <>
-      <City />
-      <Table />
-      <Library />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage />}></Route>
+          <Route path='/data' element={<Form />}></Route>
+          <Route path='/counter' element={<Counter />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
